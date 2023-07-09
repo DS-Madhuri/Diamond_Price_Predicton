@@ -5,58 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diamond price Prediction</title>
+
+<style>
+  body {
+    background-image: url("{{url_for('static', filename= 'download.jpg')}}");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+</style>
+
 </head>
 
-<body style="background-color: rgb(99, 117, 104);">
-    <img src="download.jpg" alt="Trulli" width="500" height="333">
+<!-- <body style="background-color: rgb(170, 173, 171);">
+    <img src="/templates/download.jpg" alt="Trulli" width="500" height="333"> -->
 
-    <h1> Diamond price Prediction </h1>
+<body>
+
+  <br>
+    <h1> DIAMOND PRICE PREDICTION </h1>
     <form method="GET" action="/predict">
 
         <div class="form-group">
-            <label for="carat">Carat:</label>
+            <label for="carat">   Carat : </label>
             <input type="text" id="carat" name="carat" placeholder="Enter carat value (float)">
         </div>
 
         <br>
 
         <div class="form-group">
-            <label for="depth">Depth:</label>
+            <label for="depth">   Depth : </label>
             <input type="text" id="depth" name="depth" placeholder="Enter depth value (float)">
         </div>
 
         <br>
             
         <div class="form-group">  
-            <label for="table">Table:</label>
+            <label for="table">   Table : </label>
             <input type="text" id="table" name="table" placeholder="Enter table value (float)">
         </div>
 
         <br>
                 
         <div class="form-group">
-            <label for="x">x:</label>
+            <label for="x">   x : </label>
             <input type="text" id="x" name="x" placeholder="Enter x value (float)">
         </div>
 
         <br>
               
         <div class="form-group">
-            <label for="y">y:</label>
+            <label for="y">   y : </label>
             <input type="text" id="y" name="y" placeholder="Enter y value (float)">
         </div>
 
         <br>
               
         <div class="form-group">
-            <label for="z">z:</label>
+            <label for="z">   z : </label>
             <input type="text" id="z" name="z" placeholder="Enter z value (float)">
         </div>         
 
         <br>
               
     <div class="form-group">
-      <label for="cut">Cut:</label>
+      <label for="cut">   Cut : </label>
       <select id="cut" name="cut">
         <option value="Fair">Fair</option>
         <option value="Good">Good</option>
@@ -69,7 +82,7 @@
     <br>
           
     <div class="form-group">
-      <label for="color">Color:</label>
+      <label for="color">   Color : </label>
       <select id="color" name="color">
         <option value="D">D</option>
         <option value="E">E</option>
@@ -84,7 +97,7 @@
     <br>
         
     <div class="form-group">
-      <label for="clarity">Clarity:</label>
+      <label for="clarity">   Clarity : </label>
       <select id="clarity" name="clarity">
         <option value="I1">I1</option>
         <option value="SI2">SI2</option>
@@ -101,15 +114,14 @@
      
     <br>
     <div style="clear:both;"></div>
-      <input type="submit" value="Submit">
+      <input type = "submit" value="Submit">
 
       <br>
 
-        <h3><strong>Diamond Predicted price will be =<b> Rs.{{ prediction }}/- </b> Only </strong></h3>
+        <h3><strong>Diamond Predicted price will be =  <b> Rs.{{ prediction }}/- </b> Only. </strong></h3>
 
     </form>
-
-
-</body>
+<body>
+  
 </html>
 
