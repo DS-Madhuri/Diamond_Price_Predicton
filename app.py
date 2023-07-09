@@ -6,13 +6,13 @@ import traceback
 app = Flask(__name__)
 
 @app.route('/Diamond_price')
+
 def home1():
-    
-    return render_template('index.html')
+    return render_template('diamond.html')
 
 @app.route('/predict', methods = ['GET', 'POST'])
-def predict():
 
+def predict():
     if request.method == 'GET':
         print("+"*50)
         data = request.args.get
@@ -31,8 +31,8 @@ def predict():
         Obj = DiamondPrice(carat,cut,color,clarity,depth,table,x,y,z)
         pred_price = Obj.get_predicted_price()    
 
-        return render_template('form.html', prediction = pred_price)
-           
+        return render_template('diamond.html', prediction = pred_price)
+
 
     elif request.method == 'POST':
         print("*"*40)
@@ -52,7 +52,7 @@ def predict():
         Obj = DiamondPrice(carat,cut,color,clarity,depth,table,x,y,z)
         pred_price = Obj.get_predicted_price()    
 
-        return render_template('form.html', prediction = pred_price)
-
+        return render_template('diamond.html', prediction = pred_price)
+    
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port= 8080, debug=False)
+    app.run(host='0.0.0.0', port= config.PORT_NUMBER, debug=False)
