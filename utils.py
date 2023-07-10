@@ -3,7 +3,6 @@ import json
 import numpy as np
 import config
 
-
 class DiamondPrice():
     def __init__(self, carat,cut,color,clarity,depth,table,x,y,z):
         print("****** INIT Function *********")
